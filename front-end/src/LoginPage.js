@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './LoginPage'
+import './style.css';   
 
 const LoginPage = () => {
 
@@ -46,16 +46,18 @@ const LoginPage = () => {
 
   return (
     <div>
+        <div className='container'>
         <h1>Login Page</h1>
         <form onSubmit={handleLoginSubmit}>
             <input type='text' name='username' value={loginData.username} placeholder='Enter Username' onChange={handleLoginChange} required/>
             <input type='password' name='password' value={loginData.password} placeholder='Enter Password' onChange={handleLoginChange} required/>
 
-            <button type='submit'>Login</button>
+            <button type='submit'>LOGIN</button>
             <p>
                 Don't have account ? <Link to='/registration'>Register Here</Link>
             </p>
         </form>
+        </div>
     </div>
   )
 }
