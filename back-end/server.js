@@ -3,11 +3,15 @@ const app = express();
 const port = 8000;
 const connectDB = require('./db/dbConnection');
 const Users = require('./db/user');
+const cors = require('cors');
 
 connectDB();
 
 //Parsing JSON - Middleware
 app.use(express.json());
+
+//Enable CORS
+app.use(cors());
 
 //REGISTRATION
 app.post('/register',async(req,res) => {
